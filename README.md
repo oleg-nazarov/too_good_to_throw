@@ -2,24 +2,22 @@
 
 ## Prerequisitions:
 
-- CMake 3.22
-- vcpkg
-- uWebsockets
-- nlohman-json
+- `CMake 3.22`
+- with `vcpkg` install `uwebsockets` and `nlohman-json` (see [getting started](https://vcpkg.io/en/getting-started.html))
 
 ## Hot to use
 
-1. Open a new tab in browser
-2. Type in the console the following commands:
+1. Run the program and start the server
+2. Open a new tab in browser and type in the console the following commands:
     ```
     webSocket= new WebSocket("ws://localhost:9001/");
     webSocket.onmessage= ({data}) => console.log(data);
     ```
 3. Add as much tabs as you want and do the 2nd step for them
 4. Use one of the following commands:
-    - `{ "private_msg": "*", "user_id_to": *, "message": "*" }`
-    - `{ "public_msg": "*", "message": "*" }`
-    - `{ "set_name": "name": "*" }`
+    - `{ "command": "private_msg", "user_id_to": *, "message": "*" }`
+    - `{ "command": "public_msg", "message": "*" }`
+    - `{ "command": "set_name", "new_name": "*" }`
     
     and see the results.
 
